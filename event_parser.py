@@ -1,9 +1,9 @@
-import os import json
+import json
 import httpx
 from datetime import datetime, timedelta
 import re
 
-ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
+ANTHROPIC_API_KEY = "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"
 
 GUESTS = {
     "ברקת": "bareket.barnatan@wsc-sports.com"
@@ -48,7 +48,7 @@ async def parse_event_from_text(text: str) -> dict | None:
                 "content-type": "application/json"
             },
             json={
-                "model": "claude-haiku-4-5-20251001",
+                "model": "claude-haiku-3-5-20241022",
                 "max_tokens": 300,
                 "messages": [{"role": "user", "content": prompt}]
             },
